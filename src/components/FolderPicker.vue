@@ -18,7 +18,7 @@ async function selectFolder() {
 
 <template>
   <button @click="selectFolder" class="picker-btn">
-    📁 选择本地 Git 仓库
+    选择本地 Git 仓库
   </button>
 </template>
 

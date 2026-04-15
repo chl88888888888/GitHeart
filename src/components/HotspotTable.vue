@@ -19,7 +19,7 @@ function getRiskLevel(file: FileStats): { text: string; class: string } {
 
 <template>
   <div class="hotspot-section">
-    <h2>🔥 代码修改热点 Top 15</h2>
+    <h2>代码修改热点 Top 15</h2>
     <table>
       <thead>
         <tr>
@@ -50,7 +50,7 @@ function getRiskLevel(file: FileStats): { text: string; class: string } {
       暂无文件修改数据
     </div>
     <div class="table-footnote">
-      *流失指数 = (新增行 + 删除行) / 修改次数，数值越高代表单次改动越剧烈。
+      *流失指数 = (新增行 + 删除行) / 修改次数，数值越高代表单次改动越剧烈
     </div>
   </div>
 </template>

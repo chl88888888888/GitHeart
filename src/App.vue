@@ -5,6 +5,7 @@ import GithubInput from './components/GithubInput.vue';
 import ECGChart from './components/ECGChart.vue';
 import HotspotTable from './components/HotspotTable.vue';
 import InsightCard from './components/InsightCard.vue';
+import DynamicECG from './components/DynamicECG.vue';
 import { useGitAnalyzer } from './composables/useGitAnalyzer';
 
 const { loading, result, error, analyzeLocal, analyzeGitHub } = useGitAnalyzer();
@@ -38,24 +39,24 @@ function handleGithubAnalyze(url: string, token?: string) {
     <main>
       <div v-if="loading" class="status-box">
         <div class="spinner"></div>
-        <p>⏳ 正在分析{{ currentSource === 'github' ? ' GitHub 仓库' : '' }}，请稍候...</p>
+        <p>正在分析{{ currentSource === 'github' ? ' GitHub 仓库' : '' }}，请稍候...</p>
         <p v-if="currentSource === 'github'" class="hint">首次分析可能需要几秒到几十秒，取决于仓库大小</p>
       </div>
 
       <div v-else-if="error" class="status-box error">
-        <p>❌ 分析失败</p>
+        <p>分析失败</p>
         <p class="error-detail">{{ error }}</p>
       </div>
 
       <template v-else-if="result">
         <div class="summary-bar">
-          <span class="badge">📁 {{ result.repo_path }}</span>
-          <span class="badge">📝 已分析 {{ result.total_commits }} 个提交</span>
-          <span v-if="currentSource === 'github'" class="badge github">☁️ GitHub 云端数据</span>
+          <span class="badge">{{ result.repo_path }}</span>
+          <span class="badge">已分析 {{ result.total_commits }} 个提交</span>
+          <span v-if="currentSource === 'github'" class="badge github">GitHub 云端数据</span>
         </div>
 
         <InsightCard :insights="result.insights" />
-
+        <DynamicECG :samples="result.commit_samples" />
         <ECGChart :data="result.monthly_churn" />
         <HotspotTable :files="result.file_stats" />
       </template>

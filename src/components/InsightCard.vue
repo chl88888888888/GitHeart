@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <div v-if="insights.length" class="insight-card">
-    <h3>💡 智能洞察</h3>
+    <h3>智能洞察</h3>
     <ul>
       <li v-for="(insight, idx) in insights" :key="idx">{{ insight }}</li>
     </ul>

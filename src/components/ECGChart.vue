@@ -15,7 +15,7 @@ const props = defineProps<{
 
 const chartOption = computed(() => ({
   title: {
-    text: '📊 代码提交心电图',
+    text: '代码提交心电图',
     left: 'center',
     top: 5,
     textStyle: { fontSize: 16, fontWeight: 'normal' }
@@ -25,7 +25,7 @@ const chartOption = computed(() => ({
     axisPointer: { type: 'shadow' },
     formatter: (params: any) => {
       const p = params[0];
-      return `${p.name}<br/>📦 提交次数: ${p.value}`;
+      return `${p.name}<br/>提交次数: ${p.value}`;
     }
   },
   xAxis: {

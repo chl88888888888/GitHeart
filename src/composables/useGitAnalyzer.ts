@@ -14,12 +14,21 @@ export interface MonthlyChurn {
   changes: number;
 }
 
+export interface CommitSample {
+  timestamp: string;      // ISO 8601 字符串
+  added_lines: number;
+  deleted_lines: number;
+  file_count: number;
+  total_churn: number;
+}
+
 export interface AnalysisResult {
   repo_path: string;
   total_commits: number;
   file_stats: FileStats[];
   monthly_churn: MonthlyChurn[];
   insights: string[];
+  commit_samples: CommitSample[];   // 新增
 }
 
 export function useGitAnalyzer() {

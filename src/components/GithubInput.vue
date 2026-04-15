@@ -52,7 +52,7 @@ function toggleTokenInput() {
         :class="{ 'error': !isValid }"
       />
       <button @click="validateAndSubmit" class="analyze-btn">
-        ☁️ 分析云端仓库
+        分析云端仓库
       </button>
     </div>
 
