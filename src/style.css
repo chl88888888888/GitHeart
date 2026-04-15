@@ -1,0 +1,26 @@
+:root {
+  font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+  background-color: #f8f9fc;
+  color: #1e293b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+}
